@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+
 * {
     padding: 0;
     margin: 0;
@@ -7,6 +10,8 @@
 :root {
     --bg-color: white;
     --bg-color1: #F0EDED;
+    --bg-color2: #DCFFEC;
+    --bg-color3: #1EA8A4;
 }
 
 body {
@@ -17,11 +22,61 @@ body {
 .container {
     max-width: 350px;
     height: 570px;
-    background-color: var(--bg-color1);
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--bg-color1);
+    border-radius: 50px;
 }
 
-.shopping-list {
-    background-color: var(--bg-color1);
+header {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+h1 {
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    width: 250px;
+    text-align: justify;
+    border-radius: 10px;
+    font-family: "Inter";
+}
+
+.empty-p {
+    margin: 15px;
+    display: inline-block;
+}
+
+p {
+    background-color: var(--bg-color);
+    padding: 12px;
+    width: 250px;
+    text-align: justify;
+    border-radius: 10px;
+}
+
+.addBtn-container {
+    margin: 15px;
+    display: inline-block;
+}
+
+input {
+    padding: 12px;
+    border-radius: 17px;
+    border-color: var(--bg-color2);
+    border-style: none;
+    background-color: var(--bg-color);
+    width: 150px;
+    text-align: justify;
+}
+
+button {
+    background-color: var(--bg-color3);
+    padding: 12px;
+    border-radius: 17px;
+    color: var(--bg-color1);
+    border-style: none;
+    display: inline-block;
+    width: 65px;
 }
