@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: white;
+    --bg-color1: #F0EDED;
+}
+
+body {
+    text-align: center;
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 350px;
+    height: 570px;
+    background-color: var(--bg-color1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shopping-list {
+    background-color: var(--bg-color1);
+}

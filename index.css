@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: white;
+    --bg-color1: #DCFFEC;
+    --color: #1EA8A4;
+}
+
+body {
+    text-align: center;
+    background-color: var(--bg-color);
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+.front-page-container {
+    max-width: 350px;
+    height: 570px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--color);
+    border-radius: 20px;
+}
+
+.cart-logo {
+    padding-top: 200px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.shoppy-cart {
+    color: var(--bg-color);
+    padding: 7px;
+    font-weight: 500;
+    font-family: italic;
+    font-size: 40px;
+}
+
+.todopage {
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.todopage a {
+    text-decoration: none;
+    color: var(--color);
+}
