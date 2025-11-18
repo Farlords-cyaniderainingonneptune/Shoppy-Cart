@@ -17,12 +17,21 @@
         <p></p>
       </div>
 
-      <div id="button-container" class="addBtn-container">
-        <input type="text" placeholder="New Item" id="addBtn"/>
-        <button>+Add</button>
+      <div class="addBtn-container">
+        <input type="text" placeholder="New Item" id="input-box"/>
+        <button onclick="addNewItem()">Add</button>
       </div>
 
-      <div></div>
+      <div>
+        <ul class="list-container" id="list-container">
+            <!-- <li class="checked">Item</li>
+            <li>Item</li>
+            <li>Item</li>
+            <li>Item</li> -->
+        </ul>
+      </div>
     </div>
+
+    <script src="./scripts/scripts.js"></script>
   </body>
 </html>
