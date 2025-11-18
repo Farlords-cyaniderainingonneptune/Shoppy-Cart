@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -14,6 +15,7 @@
 body {
     text-align: center;
     background-color: var(--bg-color);
+    font-family: 'Irish Grover', cursive;
 }
 
 .container {
@@ -35,21 +37,24 @@ header {
     margin-top: 30px;
     color: var(--bg-color1);
     font-size: 10px;
-    font-family: italic;
+    font-style: italic;
     font-weight: 500;
 }
 
-.buttton-container {
-    margin: 10px;
-}
+
 
 button {
     padding: 20px;
     border-radius: 10px;
     width: 250px;
+    font-family: 'Irish Grover', cursive;
 }
 
 button a {
-    text-decoration: none;
+      
     color: black;
+}
+button p {
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
 }
