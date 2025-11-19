@@ -102,11 +102,15 @@ ul li {
     padding: 12px 8px 12px 30px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
     cursor: pointer;
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
+    transition: all 0.2s;
 }
 
 ul li::before {
@@ -125,12 +129,18 @@ ul li::before {
 
 ul li.checked {
     text-decoration: line-through;
+    color: #999;
+    background-color: #f9f9f9;
 }
 
 ul li.checked::before {
     background-image: url('./assets/checked.png');
     height: 15px;
     width: 15px;
+}
+
+ul li.checked .span-text {
+    color: #999;
 }
 
 .span-text {
@@ -150,4 +160,8 @@ ul li.checked::before {
     height: 20px;
     cursor: pointer;
     transition: opacity 0.2s;
+}
+
+.edit-icon:hover, .delete-icon:hover {
+    opacity: 0.6;
 }

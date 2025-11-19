@@ -4,14 +4,14 @@ const listContainer = document.getElementById('list-container');
 
 function addNewItem() {
     if(inputBox.value === '') {
-        alert("Please enter a list");
+        alert("Please enter an item");
     } else {
         let li = document.createElement("li");
         let span = document.createElement('span');
         span.className = 'span-text';
         span.textContent = inputBox.value;
         li.appendChild(span);
-        
+
         let div = document.createElement('div');
         div.className = 'span-icons';
         
@@ -26,3 +26,34 @@ function addNewItem() {
     inputBox.value = '';
     inputBox.focus();
 }
+
+function editItem(li) {
+    let textSpan = li.querySelector('.span-text');
+    let oldText = textSpan.textContent;
+    
+    let newText = prompt('Edit item:', oldText);
+    if(newText !== null && newText.trim() !== '') {
+        textSpan.textContent = newText.trim();
+    }
+}
+
+listContainer.addEventListener('click', function(e) {
+    if(e.target.classList.contains('edit-icon')) {
+        let li = e.target.closest('li');
+        editItem(li);
+        return;
+    }
+    
+    if(e.target.classList.contains('delete-icon')) {
+        let li = e.target.closest('li');
+        li.remove(); 
+        return; 
+    }
+    
+    if(e.target.tagName === 'LI' || e.target.classList.contains('span-text')) {
+        
+        let li = e.target.tagName === 'LI' ? e.target : e.target.closest('li');
+        
+        li.classList.toggle('checked');
+    }
+});
