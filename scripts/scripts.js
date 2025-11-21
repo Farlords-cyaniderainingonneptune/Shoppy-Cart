@@ -1,5 +1,13 @@
 const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
+//saves items added
+const savedItems = localStorage.getItem('savedItem');
+        if(savedItems) {
+            listContainer.innerHTML = savedItems;
+            
+        }
+
+
 
 
 function addNewItem() {
@@ -22,10 +30,22 @@ function addNewItem() {
         
         li.appendChild(div);
         listContainer.appendChild(li);
+        console.log(listContainer)
+       
+        //save to storage
+    
+       
+        
     }
     inputBox.value = '';
     inputBox.focus();
-}
+  localStorage.setItem('savedItem', listContainer.innerHTML)
+        
+} 
+
+
+
+    
 
 function editItem(li) {
     let textSpan = li.querySelector('.span-text');
@@ -35,6 +55,7 @@ function editItem(li) {
     if(newText !== null && newText.trim() !== '') {
         textSpan.textContent = newText.trim();
     }
+localStorage.setItem('savedItem', listContainer.innerHTML)
 }
 
 listContainer.addEventListener('click', function(e) {
