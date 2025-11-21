@@ -45,6 +45,7 @@ function addNewItem() {
 
 
 
+
     
 
 function editItem(li) {
@@ -57,6 +58,12 @@ function editItem(li) {
     }
 localStorage.setItem('savedItem', listContainer.innerHTML)
 }
+inputBox.addEventListener('keyup', function(e){
+    if (e.key === 'Enter'){
+         addNewItem();
+    }
+       
+});
 
 listContainer.addEventListener('click', function(e) {
     if(e.target.classList.contains('edit-icon')) {
