@@ -26,11 +26,23 @@ const savedItems = localStorage.getItem('savedItem');
 
 updateCounter();
 
+const warningMessage = document.getElementById('warning-message');
 
 function addNewItem() {
     if(inputBox.value === '') {
-        alert("Please enter an item");
+        // Show warning message
+        warningMessage.classList.remove('hidden');
+        
+        // Hide warning after 3 seconds
+        setTimeout(function() {
+            warningMessage.classList.add('hidden');
+        }, 3000);
+        
+        inputBox.focus();
     } else {
+        // Hide warning if it's showing
+        warningMessage.classList.add('hidden');
+        
         let li = document.createElement("li");
         let span = document.createElement('span');
         span.className = 'span-text';
@@ -39,7 +51,6 @@ function addNewItem() {
 
         let div = document.createElement('div');
         div.className = 'span-icons';
-        
         div.innerHTML = `
             <img src="./assets/edit.png" alt="Edit" class="edit-icon">
             <img src="./assets/delete.png" alt="Delete" class="delete-icon">
@@ -64,6 +75,11 @@ function addNewItem() {
 
 
     
+        
+        inputBox.value = '';
+        inputBox.focus();
+    }
+}
 
 function editItem(li) {
     let textSpan = li.querySelector('.span-text');
@@ -74,6 +90,34 @@ function editItem(li) {
         textSpan.textContent = newText.trim();
     }
 localStorage.setItem('savedItem', listContainer.innerHTML)
+    let editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.value = oldText;
+    editInput.className = 'edit-input';
+    
+    textSpan.replaceWith(editInput);
+    editInput.focus();
+    editInput.select();
+    
+    editInput.addEventListener('keypress', function(e) {
+        if(e.key === 'Enter') {
+            saveEdit(editInput, li);
+        }
+    });
+    
+    editInput.addEventListener('blur', function() {
+        saveEdit(editInput, li);
+    });
+}
+
+function saveEdit(editInput, li) {
+    let newText = editInput.value.trim();
+    
+    let span = document.createElement('span');
+    span.className = 'span-text';
+    span.textContent = newText !== '' ? newText : editInput.value;
+    
+    editInput.replaceWith(span);
 }
 inputBox.addEventListener('keyup', function(e){
     if (e.key === 'Enter'){
@@ -94,12 +138,11 @@ listContainer.addEventListener('click', function(e) {
         li.remove();
         updateCounter();
         return; 
+        return;
     }
 
     if(e.target.tagName === 'LI' || e.target.classList.contains('span-text')) {
-        
         let li = e.target.tagName === 'LI' ? e.target : e.target.closest('li');
-        
         li.classList.toggle('checked');
         updateCounter();
     }
