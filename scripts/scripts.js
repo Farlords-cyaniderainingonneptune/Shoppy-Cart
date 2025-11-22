@@ -1,13 +1,30 @@
 const inputBox = document.getElementById('input-box');
 const listContainer = document.getElementById('list-container');
-//saves items added
+
+//creating budget counter
+let counterDisplay = getElementById("item-counter");
+if (!counterDisplay){
+    document.createElement('div')
+    counterDisplay.id = 'item-counter';
+    counterDisplay.style.cssText = 'padding: 15px; background: #f8f9fa; border-bottom: 2px solid #e0e0e0; text-align: center; font-weight: 600; color: #333;';
+    listContainer.parentElement.insertBefore(counterDisplay, listContainer);
+}
+//update item counter
+function updateCounter() {
+    const totalItems = listContainer.querySelectorAll('li').length;
+    const checkedItems = listContainer.querySelectorAll('li.checked').length;
+    const uncheckedItems = totalItems - checkedItems;
+    
+    counterDisplay.textContent = `${totalItems} Total Items | ${uncheckedItems} To Buy | ${checkedItems} Bought`;
+}
+//saving item
 const savedItems = localStorage.getItem('savedItem');
         if(savedItems) {
             listContainer.innerHTML = savedItems;
             
         }
 
-
+updateCounter();
 
 
 function addNewItem() {
@@ -40,7 +57,7 @@ function addNewItem() {
     inputBox.value = '';
     inputBox.focus();
   localStorage.setItem('savedItem', listContainer.innerHTML)
-        
+    updateCounter();    
 } 
 
 
@@ -74,14 +91,16 @@ listContainer.addEventListener('click', function(e) {
     
     if(e.target.classList.contains('delete-icon')) {
         let li = e.target.closest('li');
-        li.remove(); 
+        li.remove();
+        updateCounter();
         return; 
     }
-    
+
     if(e.target.tagName === 'LI' || e.target.classList.contains('span-text')) {
         
         let li = e.target.tagName === 'LI' ? e.target : e.target.closest('li');
         
         li.classList.toggle('checked');
+        updateCounter();
     }
 });
