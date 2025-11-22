@@ -8,23 +8,26 @@
   </head>
   <body>
     <div id="container" class="container">
-    
-        <header id="shopping-list">
-          <h1>My Shopping List</h1>
-        </header>
+      <header id="shopping-list">
+        <h1>My Shopping List</h1>
+      </header>
 
       <div id="p-container" class="empty-p">
-        <p></p>
+        <!--<p></p>-->
       </div>
 
       <div class="addBtn-container">
-        <input type="text" placeholder="New Item" id="input-box"/>
+        <input type="text" placeholder="New Item" id="input-box" />
         <button onclick="addNewItem()">Add</button>
+      </div>
+
+      <div id="warning-message" class="warning-message hidden">
+        <p>Please enter an item</p>
       </div>
 
       <div>
         <ul class="list-container" id="list-container">
-            <!-- <li class="checked">Item</li>
+          <!-- <li class="checked">Item</li>
             <li>Item</li>
             <li>Item</li>
             <li>Item</li> -->
