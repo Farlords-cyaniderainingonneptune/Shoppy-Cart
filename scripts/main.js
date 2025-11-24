@@ -29,16 +29,7 @@ function addNewItem() {
     }
 }
 
-// Make functions available globally for onclick
-window.addNewItem = addNewItem;
-window.closeModal = function() {
-    Modal.close();
-};
-window.confirmAddItem = function() {
-    Modal.confirmAddItem(inputBox, listContainer);
-};
-
-// Listen for Enter key in main input
+// Listens for Enter key in main input
 inputBox.addEventListener('keyup', function(e){
     if(e.key === 'Enter'){
         addNewItem();
@@ -106,3 +97,32 @@ StorageManager.restorePricesOnLoad(listContainer);
 updateItemCounter(listContainer);
 BudgetManager.updateEstimatedTotal(listContainer);
 BudgetManager.updateBudgetDisplay(listContainer);
+
+// Attach event listeners to buttons
+const addBtn = document.getElementById('add-btn');
+const cancelBtn = document.getElementById('cancel-btn');
+const confirmBtn = document.getElementById('confirm-btn');
+
+// add button
+if(addBtn) {
+    addBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent any default behavior
+        addNewItem();
+    });
+}
+
+// cancel button
+if(cancelBtn) {
+    cancelBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        Modal.close();
+    });
+}
+
+// confirm button
+if(confirmBtn) {
+    confirmBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        Modal.confirmAddItem(inputBox, listContainer);
+    });
+}

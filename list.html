@@ -14,19 +14,26 @@
 
       <div id="budget-section" class="budget-section hidden">
         <div class="budget-item">
-          <span>Budget: #</span><span id="budget-amount" class="editable-budget" contenteditable="true" data-placeholder="0"></span>
+          <span>Budget: #</span
+          ><span
+            id="budget-amount"
+            class="editable-budget"
+            contenteditable="true"
+            data-placeholder="0"
+          ></span>
         </div>
         <div class="estimated-item">
           <span>Estimated Total: #</span><span id="estimated-total">0.00</span>
         </div>
         <div class="remaining-item">
-          <span>Remaining Budget: #</span><span id="remaining-amount">0.00</span>
+          <span>Remaining Budget: #</span
+          ><span id="remaining-amount">0.00</span>
         </div>
       </div>
 
       <div class="addBtn-container">
         <input type="text" placeholder="New Item" id="input-box" />
-        <button onclick="addNewItem()">Add</button>
+        <button type="button" id="add-btn">Add</button>
       </div>
 
       <div id="warning-message" class="warning-message hidden">
@@ -36,20 +43,36 @@
       <div id="price-modal" class="modal hidden">
         <div class="modal-content">
           <h3 id="modal-title">Add Item Details</h3>
-          
+
           <div class="modal-input-group">
             <label>Quantity:</label>
-            <input type="number" id="quantity-input" placeholder="e.g., 4" min="1" value="1" />
+            <input
+              type="number"
+              id="quantity-input"
+              placeholder="e.g., 4"
+              min="1"
+              value="1"
+            />
           </div>
-          
+
           <div class="modal-input-group">
             <label>Price per item: #</label>
-            <input type="number" id="price-input" placeholder="e.g., 50.00" step="0.01" min="0" />
+            <input
+              type="number"
+              id="price-input"
+              placeholder="e.g., 50.00"
+              step="0.01"
+              min="0"
+            />
           </div>
-          
+
           <div class="modal-buttons">
-            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
-            <button class="confirm-btn" onclick="confirmAddItem()">Add Item</button>
+            <button type="button" id="cancel-btn" class="cancel-btn">
+              Cancel
+            </button>
+            <button type="button" id="confirm-btn" class="confirm-btn">
+              Add Item
+            </button>
           </div>
         </div>
       </div>
