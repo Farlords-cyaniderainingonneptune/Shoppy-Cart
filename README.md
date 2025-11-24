@@ -15,7 +15,12 @@ A modern, responsive shopping list application built with vanilla JavaScript, HT
 
 
 ### Demo Video
-![App Demo](./screenshots/Demo.MP4)
+### Demo Video
+![Watch Demo]
+
+[Click here to watch the demo video](https://drive.google.com/file/d/1LCOz6P8zK-cw2uxcvYY6XqhNDUa1vmSE/preview)
+
+
 *Watch the app in action*
 
 ### Installation
