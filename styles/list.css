@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap');
 
-
 * {
     padding: 0;
     margin: 0;
@@ -14,26 +13,32 @@
     --bg-color3: #1EA8A4;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     text-align: center;
     background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
     width: 100%;
-    max-width: 350px;
-    min-height: 570px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100vh;
     background-color: var(--bg-color1);
-    border-radius: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
 header {
     display: block;
-    margin: 0px auto 0 auto;
+    margin: 0 auto 15px auto;
     width: 100%;
     padding: 0 20px;
 }
@@ -42,7 +47,7 @@ h1 {
     padding: 12px;
     font-size: 16px;
     background-color: var(--bg-color);
-    text-align: justify;
+    text-align: center;
     border-radius: 10px;
     font-family: "Inter";
     margin: 0 auto;
@@ -51,20 +56,11 @@ h1 {
 }
 
 .addBtn-container {
-    display: flex;
-    gap: 10px;
-    position: relative;
-    width: 90%;
-    max-width: 290px;
-    margin: 5px auto 25px auto;
-    align-items: center;
-}
-
-.addBtn-container {
     display: block;
     position: relative;
-    width: 200px;
-    margin: 5px auto 25px auto;
+    width: 100%;
+    max-width: 250px;
+    margin: 15px auto 25px auto;
 }
 
 input {
@@ -72,7 +68,7 @@ input {
     width: 100%;
     border: none;
     outline: none;
-    padding: 12px 60px 12px 12px;
+    padding: 12px 70px 12px 12px;
     border-radius: 17px;
     background-color: var(--bg-color);
     font-size: 15px;
@@ -393,70 +389,35 @@ ul li.checked .span-text {
     opacity: 0.9;
 }
 
+/* Tablets and smaller laptops */
 @media (max-width: 768px) {
     .container {
-        max-width: 90%;
-        height: auto;
-        min-height: 570px;
-        padding: 15px;
-    }
-
-    header {
-        max-width: 90%;
+        padding: 20px 10px;
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 15px;
     }
 
-    .addBtn-container {
-        max-width: 90%;
-    }
-
-    ul li {
-        margin-left: 10px;
-        margin-right: 10px;
+    .span-text {
+        font-size: 15px;
     }
 }
 
+/* Phones in portrait (like iPhone XR) */
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
     .container {
-        max-width: 100%;
-        height: auto;
-        min-height: 500px;
-        border-radius: 30px;
-        padding: 10px;
-    }
-
-    header {
-        margin-top: 20px;
-        max-width: 90%;
+        padding: 15px 10px;
     }
 
     h1 {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .empty-p {
-        margin: 10px;
-    }
-
-    p {
-        width: 90%;
-        padding: 10px;
         font-size: 14px;
+        padding: 10px;
+        max-width: 220px;
     }
 
     .addBtn-container {
-        max-width: 90%;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom: 20px;
+        max-width: 220px;
     }
 
     input {
@@ -465,28 +426,30 @@ ul li.checked .span-text {
     }
 
     button {
-        right: 12px;
         width: 60px;
         padding: 10px;
         font-size: 14px;
     }
 
     ul li {
-        padding: 10px 5px 10px 28px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 8px;
+        padding: 10px 5px 10px 32px;
+        margin: 0 15px 8px 15px;
     }
 
     ul li::before {
         height: 18px;
         width: 18px;
-        left: 5px;
+        left: 6px;
+    }
+
+    ul li.checked::before {
+        height: 26px;
+        width: 26px;
     }
 
     .span-text {
         font-size: 14px;
-        margin-left: 8px;
+        margin-left: 6px;
     }
 
     .span-icons {
@@ -501,43 +464,164 @@ ul li.checked .span-text {
     .edit-input {
         font-size: 14px;
         padding: 6px;
-        margin-left: 8px;
+        margin-left: 6px;
     }
 
     .warning-message {
-        margin: 10px 10px;
+        margin: 10px 15px;
         padding: 10px;
     }
 
     .warning-message p {
         font-size: 14px;
     }
+
+    .budget-section {
+        font-size: 13px;
+        padding: 10px 15px;
+        max-width: 220px;
+    }
+
+    .item-counter {
+        font-size: 13px;
+    }
+
+    .modal-content {
+        max-width: 280px;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 360px) {
     .container {
-        border-radius: 20px;
+        padding: 12px 8px;
     }
 
     h1 {
-        font-size: 14px;
+        font-size: 13px;
+        padding: 9px;
+        max-width: 200px;
+    }
+
+    .addBtn-container {
+        max-width: 200px;
     }
 
     input {
         font-size: 13px;
+        padding: 9px 65px 9px 9px;
     }
 
     button {
         width: 55px;
         font-size: 13px;
+        padding: 9px;
+    }
+
+    ul li {
+        padding: 9px 5px 9px 30px;
+        margin: 0 12px 7px 12px;
+    }
+
+    ul li::before {
+        height: 16px;
+        width: 16px;
+        left: 5px;
+    }
+
+    ul li.checked::before {
+        height: 24px;
+        width: 24px;
     }
 
     .span-text {
         font-size: 13px;
     }
 
+    .span-icons {
+        gap: 8px;
+    }
+
     .edit-icon, .delete-icon {
         width: 16px;
         height: 16px;
+    }
+
+    .budget-section {
+        font-size: 12px;
+        max-width: 200px;
+    }
+
+    .item-counter {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 10px 5px;
+    }
+
+    h1 {
+        font-size: 12px;
+        padding: 8px;
+        max-width: 180px;
+    }
+
+    .addBtn-container {
+        max-width: 180px;
+    }
+
+    input {
+        font-size: 12px;
+        padding: 8px 60px 8px 8px;
+    }
+
+    button {
+        width: 50px;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    ul li {
+        padding: 8px 4px 8px 28px;
+        margin: 0 10px 6px 10px;
+    }
+
+    .span-text {
+        font-size: 12px;
+    }
+
+    .budget-section {
+        font-size: 11px;
+        max-width: 180px;
+        padding: 8px 12px;
+    }
+
+    .item-counter {
+        font-size: 11px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .addBtn-container {
+        margin: 10px auto 15px auto;
+    }
+
+    ul li {
+        margin-bottom: 6px;
     }
 }

@@ -1,4 +1,4 @@
-* {
+* { 
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,120 +10,119 @@
     --color: #1EA8A4;
 }
 
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
 body {
     text-align: center;
     background-color: var(--bg-color);
-    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a {
     text-decoration: none;
     color: var(--bg-color);
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .front-page-container {
-    max-width: 350px;
-    height: 570px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 100vh;
     background-color: var(--color);
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .cart-logo {
-    padding-top: 200px;
-    padding-right: 100px;
-    padding-left: 100px;
+    margin-bottom: 20px;
+}
+
+.cart-logo img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
 }
 
 .shoppy-cart {
     color: var(--bg-color);
-    padding: 7px;
     font-weight: 500;
     font-family: italic;
     font-size: 40px;
 }
 
-.todopage {
-    padding-top: 100px;
-    padding-right: 100px;
-    padding-left: 100px;
-}
-
-.todopage a {
-    text-decoration: none;
-    color: var(--color);
-}
-
 @media (max-width: 768px) {
-    .front-page-container {
-        max-width: 90%;
+    .shoppy-cart {
+        font-size: 38px;
+    }
+    
+    .cart-logo img {
+        max-width: 140px;
     }
 }
 
 @media (max-width: 480px) {
-    .front-page-container {
-        max-width: 95%;
-        height: 500px;
-    }
-
-    .cart-logo {
-        padding-top: 150px;
-        padding-right: 60px;
-        padding-left: 60px;
-    }
-
     .shoppy-cart {
-        font-size: 32px;
+        font-size: 36px;
     }
-
-    .todopage {
-        padding-top: 80px;
-        padding-right: 60px;
-        padding-left: 60px;
+    
+    .cart-logo img {
+        max-width: 120px;
     }
 }
 
 @media (max-width: 360px) {
-    .front-page-container {
-        height: 450px;
-    }
-
-    .cart-logo {
-        padding-top: 120px;
-        padding-right: 40px;
-        padding-left: 40px;
-    }
-
     .shoppy-cart {
-        font-size: 28px;
+        font-size: 32px;
     }
-
-    .todopage {
-        padding-top: 70px;
-        padding-right: 40px;
-        padding-left: 40px;
+    
+    .cart-logo img {
+        max-width: 100px;
     }
 }
 
 @media (max-width: 320px) {
-    .front-page-container {
-        height: 400px;
-    }
-
-    .cart-logo {
-        padding-top: 100px;
-        padding-right: 30px;
-        padding-left: 30px;
-    }
-
     .shoppy-cart {
-        font-size: 24px;
+        font-size: 28px;
     }
+    
+    .cart-logo img {
+        max-width: 90px;
+    }
+}
 
-    .todopage {
-        padding-top: 60px;
-        padding-right: 30px;
-        padding-left: 30px;
+@media (max-height: 500px) and (orientation: landscape) {
+    .front-page-container {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .cart-logo {
+        margin-bottom: 0;
+    }
+    
+    .cart-logo img {
+        max-width: 80px;
+    }
+    
+    .shoppy-cart {
+        font-size: 28px;
     }
 }
